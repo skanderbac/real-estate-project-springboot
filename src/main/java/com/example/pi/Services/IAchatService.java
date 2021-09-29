@@ -9,8 +9,8 @@ import com.example.pi.entities.Achat;
 
 public interface IAchatService {
 	List<Achat> retrieveAllAchat();
-	List<Achat> addAchat(Achat a);
+	Achat addAchat(Achat a);
 	void deleteAchat(Achat a);
-	List<Achat> updateUser(Achat a);
+	List<Achat> updateAchat(Achat a);
 	Optional<Achat> retrieveAchat(int id);
 }

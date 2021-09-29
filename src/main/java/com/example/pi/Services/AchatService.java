@@ -24,9 +24,8 @@ public class AchatService implements IAchatService {
 	}
 
 	@Override
-	public List<Achat> addAchat(Achat a) {
-		List <Achat> al= (List<Achat>) ar.save(a);
-		return al;
+	public Achat addAchat(Achat a) {
+		return (Achat) ar.save(a);
 	}
 
 	@Override
@@ -36,7 +35,7 @@ public class AchatService implements IAchatService {
 	}
 
 	@Override
-	public List<Achat> updateUser(Achat a) {
+	public List<Achat> updateAchat(Achat a) {
 		List <Achat> al = (List<Achat>) ar.save(a);
 		return al;
 	}
