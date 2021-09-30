@@ -49,7 +49,32 @@ public class AchatController {
 		return a;
 	}
 	
+	@PostMapping("/updateAchat")
+	@ResponseBody
+	public Achat updateAchat(@RequestBody Achat a) {
+		return achatService.updateAchat(a);
+	}
 
+	
+	@GetMapping("/searchAchatT/{titre}")
+	@ResponseBody
+	public List<Achat> searchAchatT(@PathVariable(value = "titre") String titre){
+		List<Achat> l=achatService.searchAchatT(titre);
+		return l;
+	}
+	@GetMapping("/searchAchatC/{city}")
+	@ResponseBody
+	public List<Achat> searchAchatC(@PathVariable(value = "city") String city){
+		List<Achat> l=achatService.searchAchatC(city);
+		return l;
+	}
+	
+	@GetMapping("/searchAchatTC/{titre}/{city}")
+	@ResponseBody
+	public List<Achat> searchAchatTC(@PathVariable(value = "titre") String titre, @PathVariable(value = "city") String city){
+		List<Achat> l=achatService.searchAchatTC(titre,city);
+		return l;
+	}
 	
 	
 		

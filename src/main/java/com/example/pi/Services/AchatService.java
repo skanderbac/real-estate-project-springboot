@@ -35,8 +35,8 @@ public class AchatService implements IAchatService {
 	}
 
 	@Override
-	public List<Achat> updateAchat(Achat a) {
-		List <Achat> al = (List<Achat>) ar.save(a);
+	public Achat updateAchat(Achat a) {
+		Achat al = (Achat) ar.save(a);
 		return al;
 	}
 
@@ -44,6 +44,21 @@ public class AchatService implements IAchatService {
 	public Optional<Achat> retrieveAchat(int id) {
 		Optional<Achat> a=ar.findById(id);
 		return a;
+	}
+	@Override
+	public List<Achat> searchAchatT(String titre){
+		List <Achat> al =(List<Achat>) ar.searchAchatT(titre);
+		return al;
+	}
+	@Override
+	public List<Achat> searchAchatC(String city){
+		List <Achat> al =(List<Achat>) ar.searchAchatC(city);
+		return al;
+	}
+	@Override
+	public List<Achat> searchAchatTC(String titre, String city){
+		List <Achat> al =(List<Achat>) ar.searchAchatTC(titre,city);
+		return al;
 	}
 
 }
